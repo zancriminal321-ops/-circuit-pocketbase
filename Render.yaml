@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: circuit-sports
+    env: docker
+    region: singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    disk:
+      name: pb-data
+      mountPath: /pb/pb_data
+      sizeGB: 1
+    envVars:
+      - key: PORT
+        value: 8090
